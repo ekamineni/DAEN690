@@ -1,11 +1,12 @@
 import numpy as np
 import pandas as pd
+import random
 from random import randint
 
-import sys
-print(sys.getrecursionlimit())
-sys.setrecursionlimit(10000)
-print(sys.getrecursionlimit())
+# import sys
+# print(sys.getrecursionlimit())
+# sys.setrecursionlimit(10000)
+# print(sys.getrecursionlimit())
 
 class Particle:
     #MAX_POSITION = 9
@@ -205,26 +206,16 @@ class Particle:
                 self.x = self.x - 1
                 self.y = self.y - 1
 
-def simulation(obj1, obj2,counter):
-    print("counter at start",counter)
-    while True:
+def simulation(obj1, obj2,counter=0,a=True):
+    while a==True:
         if counter == 20 or (obj1.x == obj2.x and obj1.y == obj2.y):
-            break
-   # while counter<20 or (obj1.x != obj2.x and obj1.y != obj2.y):
+            a=False
+            return (obj1,counter)
         counter += 1
-        print("inside while",counter)
-        #print("inside intial while")
-        #print(type(obj1))
-        #print(type(obj2))
-        #bj1 = obj1.move()
-        #obj2 = obj2.move()
         obj1.move()
         obj2.move()
-        #print("after move while")
-        #print(type(obj1))
-        #print(type(obj2))
-        simulation(obj1,obj2,counter)
-    return obj1,counter
+
+       # simulation(obj1,obj2,counter,a)
 
 def generateInitialposition():
     obj1x = randint(0, 9)
@@ -241,18 +232,28 @@ def generateInitialposition():
 
 def main():
     obj1,obj2 = generateInitialposition()
-    print(obj1.x, obj1.y,obj1.dir,obj1.x,obj2.y,obj2.dir)
+    #print(obj1.x, obj1.y,obj1.dir,obj1.x,obj2.y,obj2.dir)
     start_pos = [obj1.x, obj1.y,obj1.dir,obj1.x,obj2.y,obj2.dir]
-    counter = 0
-    objc, counter = simulation(obj1, obj2,counter)
+    #counter = 0
+    objc, counter = simulation(obj1, obj2)
+    #print(objc,counter,'inside main')
     end_pos = [objc.x, objc.y, counter]
 
-    return pd.Series(start_pos + end_pos)
+    return start_pos + end_pos
 
 if __name__ == "__main__":
-    dataset = pd.DataFrame(columns=["obj1xPos", "obj1yPos", "obj1Dir", "obj2xPos", "obj2yPos", "obj2Dir", "objCxPos", "objCyPos", "count"])
-    for i in range(1):
-        dataset_series = main()
-        dataset = dataset.append(dataset_series, ignore_index= True)
+    n = 100000 #number of datapoints to be simulated
+    dataset_list = []
+    for i in range(n):
+        dataset_points = main()
+        dataset_list.append(dataset_points)
 
-    print(dataset.head())
+    dataset = pd.DataFrame(dataset_list,
+        columns=["obj1xPos", "obj1yPos", "obj1Dir", "obj2xPos", "obj2yPos", "obj2Dir", "objCxPos", "objCyPos", "count"])
+
+    ##select only collision points
+    collision_points = dataset[dataset['count'] != 20]
+    print(len(collision_points))
+    dataset = dataset.append([collision_points] * 7, ignore_index=True)
+    print(len(dataset))
+    dataset.to_csv('./output/simulated_dataset.csv', encoding='utf-8')
