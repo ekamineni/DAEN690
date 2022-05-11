@@ -1,4 +1,4 @@
-obj1xPos,obj1yPos,obj1Dir,obj2xPos,obj2yPos,obj2Dir,objCxPos,objCyPos,count
+obj1xPos,obj1yPos,obj1Dir,obj2xPos,obj2yPos,obj2Dir,objCxPos,objCyPos,loop
 4,0,0,4,9,4,4,2,0
 6,0,5,4,9,6,6,2,0
 2,0,0,8,9,5,2,2,0
