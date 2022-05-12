@@ -11,7 +11,7 @@ sc = StandardScaler()
 
 """ Experiment 1.1 : Complete dataset for training and testing"""
 
-data = pd.read_csv('../output/exp1.1_dataset.csv', encoding='utf-8')
+data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.1_complete.csv')
 
 m = len(data)
 ## Splitting Dataset ###
