@@ -62,7 +62,7 @@ Actual_pred_test_df.to_csv('../output/Exp1.1_fulldataset+pred.csv', index= False
 
 training_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_traindataset.csv')
 testing_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_testdataset.csv')
-fulldata_test = pd.read_csv('../output/exp1.2_fulldata_test.csv', encoding='utf-8')
+fulldata_test = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/exp1.2_fulldata_test.csv')
 
 ### training set ####
 X = training_data.iloc[:,:2].values
