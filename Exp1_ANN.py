@@ -60,8 +60,8 @@ Actual_pred_test_df.to_csv('../output/Exp1.1_fulldataset+pred.csv', index= False
 
 """ Experiment 1.2 : 80% initial conditions for training """
 
-training_data = pd.read_csv('../output/exp1.2_datasets/exp1.2_traindata_70_30_4cn_2pn.csv', encoding='utf-8')
-testing_data = pd.read_csv('../output/exp1.2_datasets/exp1.2_testdata_70_30_4cn_2pn.csv', encoding='utf-8')
+training_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_traindataset.csv')
+testing_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_testdataset.csv')
 fulldata_test = pd.read_csv('../output/exp1.2_fulldata_test.csv', encoding='utf-8')
 
 ### training set ####
