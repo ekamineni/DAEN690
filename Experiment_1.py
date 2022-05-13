@@ -11,7 +11,7 @@ sc = StandardScaler()
 
 """ Experiment 1.1 : Complete dataset for training and testing"""
 
-data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp11_fulldataset.csv')
+data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp11_FullDataset.csv')
 
 m = len(data)
 ## Splitting Dataset ###
@@ -60,7 +60,7 @@ Actual_pred_test_df.to_csv('../output/Exp1.1_fulldataset+pred.csv', index= False
 
 """ Experiment 1.2 : 80% initial conditions for training """
 
-training_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_traindataset.csv')
+training_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp12_traindataset.csv')
 testing_data = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/Exp1.2_testdataset.csv')
 fulldata_test = pd.read_csv('https://github.com/ekamineni/DAEN690/blob/main/Datarepo/exp1.2_fulldata_test.csv')
 
