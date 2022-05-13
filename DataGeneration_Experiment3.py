@@ -379,9 +379,9 @@ print("Number of collision cases: ",len(test[test['loop'] == 1]))
 print("Number of non collision cases: ",len(test[test['loop'] != 1]))
 
 #saving the train and test dataframe as CSV to local computer.
-df.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/New31data.csv", index = False)
-train.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/New31train.csv", index=False)
-test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/New31test.csv", index=False)
+df.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp31_data.csv", index = False)
+train.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp31_train.csv", index=False)
+test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp31_test.csv", index=False)
 
 
 # ------------ Data for experiment 3.2 -------------
@@ -399,7 +399,7 @@ print("Number of dup in non collision cases: ",df[df['loop'] != 1].duplicated().
 print("Number of duplicate records present: ",df.duplicated().sum())
 
 # Saving the dataframe as a CSV file
-df.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp32Fulldata.csv", index=False)
+df.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp32_Fulldata.csv", index=False)
 
 #Spliting the dataset into train and test with 75:25% ratio
 train,test = train_test_split(df,test_size=0.25,random_state=0)
@@ -412,5 +412,5 @@ print("Number of collision cases: ",len(test[test['loop'] == 1]))
 print("Number of non collision cases: ",len(test[test['loop'] != 1]))
 
 #saving the train and test dataframe as CSV to local computer.
-train.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/New32train.csv", index=False)
-test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/New32test.csv", index=False)
+train.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp32_train.csv", index=False)
+test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp32_test.csv", index=False)
