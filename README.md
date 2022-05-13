@@ -1,5 +1,5 @@
 # Deep Learning for System Test and Evaluation:
-## _The Last Markdown Editor, Eswar Sesha Sai
+
 
 [![N|Solid](https://upload.wikimedia.org/wikipedia/commons/5/53/George_Mason_University_logo.svg)]()
 
