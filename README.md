@@ -25,11 +25,8 @@ Template code is provided in the .ipynb notebook file where each experimenet is 
 ## Run
 In a terminal or command window, navigate to the top-level project directory DAEN690 (that contains this README) and run one of the following commands:
 
-ipython notebook experiment4_1.py
-or
+ipython notebook Experiment4.py
 
-jupyter notebook experiment4_1.py
-or open with Jupyter Lab
 
 jupyter lab
 This will open the Jupyter Notebook software and project file in your browser.
