@@ -15,8 +15,8 @@ from sklearn.preprocessing import StandardScaler
 # ----------------------Exp 3.1 ----------------------
 
 #Reading test and train data
-train = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31train.csv")
-test = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31test.csv")
+train = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31_train.csv")
+test = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31_test.csv")
 
 #Copying only obj 1 -> x, y, direction and obj 2-> x, y, direction fields into X_train and X_test
 #Copying only collision x, y and loop values into Y_train and Y_test
@@ -76,7 +76,7 @@ print('Precision: %f',Precision)
 
 # ---------------------- Exp 3.1 full training ----------------------------
 
-Exp31full = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31Fulldata.csv")
+Exp31full = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp31_Fulldata.csv")
 
 
 #Copying only obj 1 -x, y, direction and obj 2-x, y, direction fields into X_train
@@ -135,8 +135,8 @@ print('Precision: %f',Precision)
 
 # ------------------------ Exp 3.2 ----------------------
 #Reading test and train data
-train = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32train.csv")
-test = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32test.csv")
+train = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32_train.csv")
+test = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32_test.csv")
 
 #Copying only obj 1 -x, y, direction and obj 2-x, y, direction fields into X_train and X_test
 #Copying only collision x, y and loop values into Y_train and Y_test
@@ -197,7 +197,7 @@ print('Precision: %f',Precision)
 
 # ---------------------- Exp 3.2 full training ----------------------------
 
-Exp32full = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32Fulldata.csv")
+Exp32full = pd.read_csv("https://raw.githubusercontent.com/ekamineni/DAEN690/main/Datarepo/Exp32_Fulldata.csv")
 
 
 #Copying only obj 1 -x, y, direction and obj 2-x, y, direction fields into X_train
