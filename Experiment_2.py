@@ -17,8 +17,8 @@ from keras.models import Sequential
 # -------------------------- Exp 2.1 -------------------------
 
 #Reading test and train data
-train = pd.read_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp21dataFull.csv")
-test = pd.read_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp21test.csv")
+train = pd.read_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp21_2/Exp21_Fulldata.csv")
+test = pd.read_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp21_2/Exp21_test.csv")
 
 #Copying only obj 1 -> x, y into X_train and X_test
 #Copying only final obj 1 x, y values into Y_train and Y_test
@@ -102,8 +102,8 @@ r2_score(actual_test_df,pred_test_df, multioutput='variance_weighted')
 # ------------------------------- Exp 2.2 ------------------------
 
 #Reading test and train data
-train = pd.read_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp22train.csv")
-test = pd.read_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp22test.csv")
+train = pd.read_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp22/Exp22_train.csv")
+test = pd.read_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp22/Exp22_test.csv")
 
 #Copying only obj 1 -> x, y into X_train and X_test
 #Copying only final obj 1 x, y values into Y_train and Y_test
@@ -184,7 +184,7 @@ r2_score(actual_test_df,pred_test_df, multioutput='variance_weighted')
 # ---------------------- Full dataset training -----------------------
 
 #Reading test and train data
-train = pd.read_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp21dataFull.csv")
+train = pd.read_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp21_2/Exp21_Fulldata.csv")
 
 #Copying only obj 1 -> x, y into X_train
 #Copying only final obj 1 x, y values into Y_train
