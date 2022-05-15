@@ -209,8 +209,8 @@ print("Number of duplicate records present: ",df.duplicated().sum())
 train,test = train_test_split(df,test_size=0.30,random_state=0)
 
 #saving the train and test dataframe as CSV to local computer.
-df.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp21dataFull.csv", index = False)
-test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp21test.csv", index=False)
+df.to_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp21_2/Exp21_Fulldata.csv", index = False)
+test.to_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp21_2/Exp21_test.csv", index=False)
 
 
 # ------------ Data for Experiment 2.2 -------------
@@ -225,6 +225,6 @@ print("Number of duplicate records present: ",df.duplicated().sum())
 train,test = train_test_split(df,test_size=0.10,random_state=0)
 
 #saving the train and test dataframe as CSV to local computer.
-train.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp22train.csv", index = False)
-test.to_csv("C:/Users/shant/Documents/GMU/FInal Sem/Final Project/Final Version Files/Exp22test.csv", index=False)
+train.to_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp22/Exp22_train.csv", index = False)
+test.to_csv("/Users/sushanth/Desktop/DAEN 690/Mom NewData/Exp22/Exp22_test.csv", index=False)
 
