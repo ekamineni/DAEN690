@@ -11,6 +11,9 @@ import time as t
 from random import randint
 from random import choice
 from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
+from collections import Counter
 
 #Function def to generate random initial positions of  obj 1 and 2 using choice library
 def generateInitialCoordinate():
@@ -325,7 +328,7 @@ def objectNoEqual(obj1xPos,obj1yPos,obj1Dir,obj2xPos,obj2yPos,obj2Dir):
 # Main function  is used to call generateInitialCoordinate and objectNoEqual functions.
 def main():
     # "NumberOfRecordsReq" object specify the number of records generated using this code.
-    NumberOfRecordsReq = 10000
+    NumberOfRecordsReq = 100000
     #Start time to check for time taken to generate the records.
     start_time= t.time()
     i =0
@@ -358,6 +361,25 @@ initinalCoordinate_Df.min()
 
 df = initinalCoordinate_Df.drop_duplicates()
 df = df.apply(pd.to_numeric)
+
+X = df[["obj1xPos","obj1yPos","obj1Dir","obj2xPos","obj2yPos","obj2Dir"]]
+y = df["loop"]
+
+over = RandomOverSampler()
+under = RandomUnderSampler()
+
+# first performing oversampling to minority class
+X_over, y_over = over.fit_resample(X, y)
+print(f"Oversampled: {Counter(y_over)}")
+
+# now to comine under sampling 
+X_combined_sampling, y_combined_sampling = under.fit_resample(X_over, y_over)
+print(f"Combined Random Sampling: {Counter(y_combined_sampling)}")
+
+df =pd.concat([X_combined_sampling,y_combined_sampling],axis = 1,ignore_index=True)
+df.columns = ["obj1xPos","obj1yPos","obj1Dir","obj2xPos","obj2yPos","obj2Dir","loop"]
+df = df.append([df] * 5, ignore_index=True)
+
 # Various type of records present in the dataframe
 print(df.describe())
 print("Number of total records: ", len(df))
@@ -366,8 +388,6 @@ print("Number of non collision cases: ",len(df[df['loop'] != 1]))
 print("Number of dup in collision cases: ",df[df['loop'] == 1].duplicated().sum())
 print("Number of dup in non collision cases: ",df[df['loop'] != 1].duplicated().sum())
 print("Number of duplicate records present: ",df.duplicated().sum())
-
-df = df.append([df] * 50, ignore_index = True)
 
 train,test = train_test_split(df,test_size=0.25,random_state=0)
 print("Number of total records: ", len(train))
